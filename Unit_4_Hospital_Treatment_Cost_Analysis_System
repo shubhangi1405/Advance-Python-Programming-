@@ -1,0 +1,23 @@
+import numpy as np
+import pandas as pd
+
+# Create NumPy array
+cost = np.array([15000, 25000, 18000, 30000, 12000])
+
+# Calculate statistics
+print("Mean Cost:", np.mean(cost))
+print("Maximum Cost:", np.max(cost))
+print("Minimum Cost:", np.min(cost))
+
+# Create Pandas DataFrame
+df = pd.DataFrame({
+    'Patient': ['Amit', 'Priya', 'Rahul', 'Sneha', 'Neha'],
+    'Treatment_Cost': cost
+})
+
+print("\nPatient Details:")
+print(df)
+
+# Display cost above 20000
+print("\nPatients with cost above 20000:")
+print(df[df['Treatment_Cost'] > 20000])
