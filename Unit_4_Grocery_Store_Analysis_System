@@ -1,0 +1,25 @@
+import numpy as np
+import pandas as pd
+
+# Create NumPy array
+price = np.array([50, 30, 100, 80, 40])
+
+# Calculate statistics
+print("Mean Price:", np.mean(price))
+print("Median Price:", np.median(price))
+print("Maximum Price:", np.max(price))
+print("Minimum Price:", np.min(price))
+
+# Create Pandas DataFrame
+df = pd.DataFrame({
+    'Item': ['Rice', 'Sugar', 'Oil', 'Wheat', 'Salt'],
+    'Price': price,
+    'Quantity': [5, 15, 8, 20, 6]
+})
+
+print("\nGrocery Details:")
+print(df)
+
+# Display items with quantity less than 10
+print("\nItems with quantity less than 10:")
+print(df[df['Quantity'] < 10])
