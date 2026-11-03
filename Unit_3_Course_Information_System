@@ -1,0 +1,31 @@
+import csv
+import argparse
+
+# Accept filename using argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("filename")
+args = parser.parse_args()
+
+# Read course records
+f = open(args.filename, "r")
+data = list(csv.DictReader(f))
+f.close()
+
+# Display all courses
+print("Course Details:")
+for row in data:
+    print(row)
+
+# Search course
+cid = input("\nEnter Course ID: ")
+
+found = False
+
+for row in data:
+    if row['CourseID'] == cid:
+        print("Course Found:", row)
+        found = True
+        break
+
+if not found:
+    print("Course not found")Course Information System
