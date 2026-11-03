@@ -1,0 +1,30 @@
+import csv
+import re
+
+# Read customer records
+f = open("customers.csv", "r")
+data = list(csv.DictReader(f))
+f.close()
+
+# Display all customers
+print("Customer Details:")
+for row in data:
+    print(row)
+
+# Search customer
+acc = input("\nEnter Account Number: ")
+
+# Validate account number
+if re.fullmatch(r'\d{10}', acc):
+    found = False
+
+    for row in data:
+        if row['AccountNumber'] == acc:
+            print("Customer Found:", row)
+            found = True
+            break
+
+    if not found:
+        print("Account not found")
+else:
+    print("Invalid Account Number")
